@@ -20,13 +20,13 @@
             <thead>
                 <tr>
                     <th>
-                        Expense Id
-                    </th>
-                    <th>
                         Expense Name
                     </th>
                     <th>
-                        Ammount
+                        Amount
+                    </th>
+                    <th>
+                        Action
                     </th>
                 </tr>
             </thead>
@@ -38,9 +38,9 @@
                     <td width="30%">@expense.ExpenseName</td>
                     <td width="30%">@expense.Amount</td>
                     <td width="40%">
-                        <div class="col-6 text-right">
-                            <a asp-controller="Expense" asp-action="Update" class="btn btn-primary">Update</a>
-                            <a asp-controller="Expense" asp-action="Delete" class="btn btn-danger">Delete</a>
+                        <div class="w-100 btn-group" role="group">
+                            <a asp-controller="Expense" asp-action="Update" asp-route-Id="@expense.Id" class="btn btn-primary mx-1">Update</a>
+                            <a asp-controller="Expense" asp-action="Delete" asp-route-Id="@expense.Id" class="btn btn-danger mx-1">Delete</a>
                         </div>
                     </td>
                 </tr>
