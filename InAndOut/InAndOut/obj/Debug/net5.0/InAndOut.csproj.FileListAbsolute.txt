@@ -436,3 +436,7 @@ D:\DotNet5-Projects\InAndOut\InAndOut\obj\Debug\net5.0\Razor\Views\Expense\Index
 D:\DotNet5-Projects\InAndOut\InAndOut\obj\Debug\net5.0\Razor\Views\Expense\Create.cshtml.g.cs
 D:\DotNet5-Projects\InAndOut\InAndOut\obj\Debug\net5.0\Razor\Views\Expense\Delete.cshtml.g.cs
 D:\DotNet5-Projects\InAndOut\InAndOut\obj\Debug\net5.0\Razor\Views\Expense\Update.cshtml.g.cs
+D:\DotNet5-Projects\InAndOut\InAndOut\obj\Debug\net5.0\Razor\Views\ExpenseType\Create.cshtml.g.cs
+D:\DotNet5-Projects\InAndOut\InAndOut\obj\Debug\net5.0\Razor\Views\ExpenseType\Delete.cshtml.g.cs
+D:\DotNet5-Projects\InAndOut\InAndOut\obj\Debug\net5.0\Razor\Views\ExpenseType\Index.cshtml.g.cs
+D:\DotNet5-Projects\InAndOut\InAndOut\obj\Debug\net5.0\Razor\Views\ExpenseType\Update.cshtml.g.cs
