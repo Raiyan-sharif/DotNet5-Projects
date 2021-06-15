@@ -1,0 +1,22 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace InAndOut.Models
+{
+    public class Expense
+    {
+        [Key]
+        public int Id { get; set; }
+        [DisplayName("Expense Name")]
+        [Required]
+        public string ExpenseName { get; set; }
+        [Required]
+        [Range(0.1,Double.MaxValue, ErrorMessage ="Amount must be greater than 0!")]
+        public double Amount { get; set; }
+
+    }
+}
