@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace InAndOut.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    [Migration("20210615203452_addExpenseType")]
-    partial class addExpenseType
+    [Migration("20210616054851_addExpenseTypeFK")]
+    partial class addExpenseTypeFK
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -34,7 +34,12 @@ namespace InAndOut.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("ExpenseTypeId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("ExpenseTypeId");
 
                     b.ToTable("Expenses");
                 });
@@ -47,6 +52,7 @@ namespace InAndOut.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Name")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -73,6 +79,17 @@ namespace InAndOut.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Items");
+                });
+
+            modelBuilder.Entity("InAndOut.Models.Expense", b =>
+                {
+                    b.HasOne("InAndOut.Models.ExpenseType", "ExpenseType")
+                        .WithMany()
+                        .HasForeignKey("ExpenseTypeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ExpenseType");
                 });
 #pragma warning restore 612, 618
         }
